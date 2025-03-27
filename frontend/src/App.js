@@ -1,24 +1,24 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // ===== Navbar & Footer Component =====
-import Navbar from './Navbar-Footer/Navbar';
-import Footer from './Navbar-Footer/Footer';
+import Navbar from "./Navbar-Footer/Navbar";
+import Footer from "./Navbar-Footer/Footer";
 
 // ===== Component =====
 import Home from "./Pages/Home";
-import StudentTable from './Pages/StudentTable';
-import Counter from './Pages/Counter';
-import Calculator from './Pages/Calculator';
-import Form from './Forms/Form';
-import FormValidation from './Forms/FormValidation';
-import LocalStorageDemo from './LocStorage/LocStorage';
-import ShowLocStorage from './LocStorage/ShowLocStorage';
-import useMemoDemo from './useMemo/useMemoDemo';
-import useMemoPractical from './useMemo/useMemoPractical';
+import StudentTable from "./Pages/StudentTable";
+import Counter from "./Pages/Counter";
+import Calculator from "./Pages/Calculator";
+import Form from "./Forms/Form";
+import FormValidation from "./Forms/FormValidation";
+import LocalStorageDemo from "./LocStorage/LocStorage";
+import ShowLocStorage from "./LocStorage/ShowLocStorage";
+import useMemoDemo from "./useMemo/useMemoDemo";
+import useMemoPractical from "./useMemo/useMemoPractical";
+import useEffectDemo from "./useEfect/useEffectDemo";
 
 function App() {
-
   const studentMarks = [
     {
       name: "John Doe",
@@ -61,7 +61,7 @@ function App() {
       marks1: Math.floor(Math.random() * 101),
       marks2: Math.floor(Math.random() * 101),
       marks3: Math.floor(Math.random() * 101),
-    }
+    },
   ];
 
   return (
@@ -89,6 +89,9 @@ function App() {
           {/* Use Memo */}
           <Route path="/useMemoDemo" Component={useMemoDemo}></Route>
           <Route path="/useMemoPractical" Component={useMemoPractical}></Route>
+
+          {/* Use Effect */}
+          <Route path="/useEffectDemo" Component={useEffectDemo}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
