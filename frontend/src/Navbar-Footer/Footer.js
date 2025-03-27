@@ -133,14 +133,16 @@ const Footer = () => {
 
           {/* Column 4 */}
           <div>
-            <h3 className="text-lg font-semibold text-blue-600 mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold text-blue-600 mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/"
+                  to="/useReducerDemo"
                   className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
-                  Privacy Policy
+                  useReducer Demo
                 </Link>
               </li>
               <li>
