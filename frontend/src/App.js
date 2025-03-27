@@ -14,6 +14,8 @@ import Form from './Forms/Form';
 import FormValidation from './Forms/FormValidation';
 import LocalStorageDemo from './LocStorage/LocStorage';
 import ShowLocStorage from './LocStorage/ShowLocStorage';
+import useMemoDemo from './useMemo/useMemoDemo';
+import useMemoPractical from './useMemo/useMemoPractical';
 
 function App() {
 
@@ -69,14 +71,24 @@ function App() {
         <Routes>
           <Route path="/" Component={Home}></Route>
 
-          <Route path='/StudentTable' element={<StudentTable studentMarks={studentMarks} />}></Route>
+          <Route
+            path="/StudentTable"
+            element={<StudentTable studentMarks={studentMarks} />}
+          ></Route>
           <Route path="/Counter" Component={Counter}></Route>
           <Route path="/Calculator" Component={Calculator}></Route>
+
+          {/* Form */}
           <Route path="/Form" Component={Form}></Route>
           <Route path="/formValidation" Component={FormValidation}></Route>
+
+          {/* Local Storage */}
           <Route path="/localStorage" Component={LocalStorageDemo}></Route>
           <Route path="/ShowlocalData" Component={ShowLocStorage}></Route>
 
+          {/* Use Memo */}
+          <Route path="/useMemoDemo" Component={useMemoDemo}></Route>
+          <Route path="/useMemoPractical" Component={useMemoPractical}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
