@@ -17,6 +17,7 @@ import ShowLocStorage from "./LocStorage/ShowLocStorage";
 import useMemoDemo from "./useMemo/useMemoDemo";
 import useMemoPractical from "./useMemo/useMemoPractical";
 import useEffectDemo from "./useEfect/useEffectDemo";
+import useReferenceDemo from "./useReference/useReferenceDemo";
 
 function App() {
   const studentMarks = [
@@ -92,6 +93,9 @@ function App() {
 
           {/* Use Effect */}
           <Route path="/useEffectDemo" Component={useEffectDemo}></Route>
+
+          {/* Use Reference */}
+          <Route path="/useReferenceDemo" Component={useReferenceDemo}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

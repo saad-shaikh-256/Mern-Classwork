@@ -122,10 +122,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/useReferenceDemo"
                   className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
-                  Support
+                  useReference Demo
                 </Link>
               </li>
             </ul>
