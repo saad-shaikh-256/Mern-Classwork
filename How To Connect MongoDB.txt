@@ -1,0 +1,45 @@
+How To Connect MongoDB in Mern
+
+// Create a db.js file
+
+const mongoose = require('mongoose)
+mongoose.connect('mongodb://localhost:27017/database-name) // Give the database name
+mongoose.connection.on('connected',()=>{
+   console.log('Connecting to MongoDB')
+})
+
+mongoose.connection.on('error',(err)=>{
+   console.log('Connecting Error :',err)
+})
+
+module.exports = mongoose
+
+
+
+// To create a table in mongoose
+Create an file called Model/SchemaName.js
+
+const mongoose = require('mongoose')
+
+const userSchema = new mongoose.Schema({
+   user_name:{
+      type: String,
+      require:true
+   }
+   user_email:{
+      type: String,
+      require:true
+   }
+   user_dob:{
+      type: Date,
+      require:true
+   }
+   gender:{
+      type: String,
+      enum:['male','female'],
+      default: 'male'
+   }
+})
+
+
+module.exports = mongoose.module('mbs_user',userSchema)

@@ -1,0 +1,31 @@
+How to Setup Mern Server
+
+mkdir Mern-Server
+cd Mern-Server
+npm init -y
+npm install express mongoose body-parser cors nodemon
+
+
+Create an App.js in that folder and write
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+
+const app = express()
+app.use(bodyParser.json())
+app.use(cors())
+
+// Setting up Port
+const port = 5000
+app.get('/',(req,res)=>{
+   res.send("Hello World from server")
+})
+
+app.listen(port,()=>{
+   console.log(`server is running on http://localhost:${port}`)
+})
+
+// Add This lines in package.json
+"start": "node app.js",
+"dev": "nodemon app.js",
