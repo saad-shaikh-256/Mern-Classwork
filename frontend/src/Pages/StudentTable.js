@@ -4,7 +4,7 @@ const StudentTable = (props) => {
   const studentMark = props.studentMarks;
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-blue-600 px-6 py-4">
           <h4 className="text-white text-center text-xl font-semibold">

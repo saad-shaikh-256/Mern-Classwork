@@ -9,6 +9,7 @@ import Footer from './Navbar-Footer/Footer';
 import Home from "./Pages/Home";
 import StudentTable from './Pages/StudentTable';
 import Counter from './Pages/Counter';
+import Calculator from './Pages/Calculator';
 
 function App() {
 
@@ -65,7 +66,8 @@ function App() {
           <Route path="/" Component={Home}></Route>
 
           <Route path='/StudentTable' element={<StudentTable studentMarks={studentMarks} />}></Route>
-          <Route path="/counter" Component={Counter}></Route>
+          <Route path="/Counter" Component={Counter}></Route>
+          <Route path="/Calculator" Component={Calculator}></Route>
 
         </Routes>
         <Footer />

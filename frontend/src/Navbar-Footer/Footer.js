@@ -22,18 +22,18 @@ const Footer = () => {
                      </li>
                      <li>
                         <Link
-                           to="/"
+                           to="/Counter"
                            className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                         >
-                           Careers
+                           Counter
                         </Link>
                      </li>
                      <li>
                         <Link
-                           to="/"
+                           to="/Calculator"
                            className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                         >
-                           Blog
+                           Calculator
                         </Link>
                      </li>
                      <li>
