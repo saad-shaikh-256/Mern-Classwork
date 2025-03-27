@@ -79,4 +79,21 @@ route.put("/updateUser/:userID", async (req, res) => {
   }
 });
 
+// Search User
+route.get("/searchUser/:key", async (req, res) => {
+  const key = req.params.key;
+  try {
+    let data = await User.find({
+      $or: [
+        {
+          user_name: { $regex: key },
+        },
+      ],
+    });
+    res.status(200).json({ success: "User found", data: data });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
 module.exports = route;
