@@ -20,6 +20,7 @@ import useEffectDemo from "./useEfect/useEffectDemo";
 import useReferenceDemo from "./useReference/useReferenceDemo";
 import useReferencePractical from "./useReference/useReferencePractical";
 import useReducerDemo from "./useReducer/useReducerDemo";
+import userContextParent from "./userContext/userContextParent";
 
 function App() {
   const studentMarks = [
@@ -105,6 +106,9 @@ function App() {
 
           {/* Use Reducer */}
           <Route path="/useReducerDemo" Component={useReducerDemo}></Route>
+
+          {/* Use Contect */}
+          <Route path="/useContext" Component={userContextParent}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

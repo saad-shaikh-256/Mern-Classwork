@@ -147,10 +147,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/useContext"
                   className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
-                  Terms of Service
+                  useContext Demo
                 </Link>
               </li>
               <li>
