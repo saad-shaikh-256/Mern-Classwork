@@ -15,8 +15,7 @@ const LocalStorageDemo = () => {
     if (checkValidation()) {
       console.log(data);
       localStorage.setItem("formData", JSON.stringify(data));
-      setData({ name: "", email: "", phone: "" });
-      navigate("/");
+      navigate("/ShowlocalData");
     }
   };
 

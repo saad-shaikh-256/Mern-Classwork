@@ -13,6 +13,7 @@ import Calculator from './Pages/Calculator';
 import Form from './Forms/Form';
 import FormValidation from './Forms/FormValidation';
 import LocalStorageDemo from './LocStorage/LocStorage';
+import ShowLocStorage from './LocStorage/ShowLocStorage';
 
 function App() {
 
@@ -74,6 +75,7 @@ function App() {
           <Route path="/Form" Component={Form}></Route>
           <Route path="/formValidation" Component={FormValidation}></Route>
           <Route path="/localStorage" Component={LocalStorageDemo}></Route>
+          <Route path="/ShowlocalData" Component={ShowLocStorage}></Route>
 
         </Routes>
         <Footer />
