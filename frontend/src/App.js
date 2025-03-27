@@ -18,6 +18,7 @@ import useMemoDemo from "./useMemo/useMemoDemo";
 import useMemoPractical from "./useMemo/useMemoPractical";
 import useEffectDemo from "./useEfect/useEffectDemo";
 import useReferenceDemo from "./useReference/useReferenceDemo";
+import useReferencePractical from "./useReference/useReferencePractical";
 
 function App() {
   const studentMarks = [
@@ -96,6 +97,10 @@ function App() {
 
           {/* Use Reference */}
           <Route path="/useReferenceDemo" Component={useReferenceDemo}></Route>
+          <Route
+            path="/useReferencePractical"
+            Component={useReferencePractical}
+          ></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
