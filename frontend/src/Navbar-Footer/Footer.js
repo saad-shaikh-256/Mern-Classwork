@@ -38,10 +38,10 @@ const Footer = () => {
                      </li>
                      <li>
                         <Link
-                           to="/"
+                           to="/Form"
                            className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                         >
-                           Contact Us
+                           Form
                         </Link>
                      </li>
                   </ul>
@@ -49,14 +49,14 @@ const Footer = () => {
 
                {/* Column 2 */}
                <div>
-                  <h3 className="text-lg font-semibold text-blue-600 mb-4">Services</h3>
+                  <h3 className="text-lg font-semibold text-blue-600 mb-4">Quick Links</h3>
                   <ul className="space-y-2">
                      <li>
                         <Link
-                           to="/"
+                           to="/formValidation"
                            className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                         >
-                           Web Development
+                           Form Validation
                         </Link>
                      </li>
                      <li>

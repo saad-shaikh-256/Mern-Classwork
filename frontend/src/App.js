@@ -10,6 +10,8 @@ import Home from "./Pages/Home";
 import StudentTable from './Pages/StudentTable';
 import Counter from './Pages/Counter';
 import Calculator from './Pages/Calculator';
+import Form from './Forms/Form';
+import FormValidation from './Forms/FormValidation';
 
 function App() {
 
@@ -68,6 +70,8 @@ function App() {
           <Route path='/StudentTable' element={<StudentTable studentMarks={studentMarks} />}></Route>
           <Route path="/Counter" Component={Counter}></Route>
           <Route path="/Calculator" Component={Calculator}></Route>
+          <Route path="/Form" Component={Form}></Route>
+          <Route path="/formValidation" Component={FormValidation}></Route>
 
         </Routes>
         <Footer />
