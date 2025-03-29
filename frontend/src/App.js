@@ -21,6 +21,7 @@ import useReferenceDemo from "./useReference/useReferenceDemo";
 import useReferencePractical from "./useReference/useReferencePractical";
 import useReducerDemo from "./useReducer/useReducerDemo";
 import userContextParent from "./userContext/userContextParent";
+import ListData from "./axiosDemo/ListData";
 
 function App() {
   const studentMarks = [
@@ -109,6 +110,9 @@ function App() {
 
           {/* Use Contect */}
           <Route path="/useContext" Component={userContextParent}></Route>
+
+          {/* Axios Demo */}
+          <Route path="/axiosDemo" Component={ListData}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
