@@ -5,6 +5,22 @@ const route = express.Router();
 const User = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
 const { generateToken } = require("../utils/jwtUtils");
+const authMiddleware = require("../utils/authMiddleware");
+
+router.get(
+  "/get-user",
+  authMiddleware.authenticateToken,
+  async (req, res, next) => {
+    try {
+      const user = await User.findById();
+      res
+        .status(200)
+        .json({ message: "User fetched successfully", data: user });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+);
 
 route.post("/login", async (req, res) => {
   try {
@@ -28,7 +44,6 @@ route.post("/login", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 
 // to save the data in the database
 route.post("/addUser", async (req, res) => {
