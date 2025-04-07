@@ -4,6 +4,31 @@ const express = require("express");
 const route = express.Router();
 const User = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
+const { generateToken } = require("../utils/jwtUtils");
+
+route.post("/login", async (req, res) => {
+  try {
+    const { user_email, password } = req.body;
+
+    const user = await User.findOne({ user_email });
+    if (!user) {
+      return res.status(400).json({ error: "Invalid email or password" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid email or password" });
+    }
+
+    // Generate token with the correct variable 'user'
+    const token = await generateToken(user);
+
+    res.status(200).json({ message: "Login successful", token: token });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 // to save the data in the database
 route.post("/addUser", async (req, res) => {
@@ -53,15 +78,6 @@ route.get("/singleUser/:userID", async (req, res) => {
 });
 
 //to delete only 1 user
-route.get("/deleteUser/:userID", async (req, res) => {
-  try {
-    const userId = req.params.userID;
-    const user = await User.findById(userId);
-    res.status(200).json({ success: "One user from db", data: user });
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-});
 
 // update User
 route.put("/updateUser/:userID", async (req, res) => {
@@ -95,5 +111,41 @@ route.get("/searchUser/:key", async (req, res) => {
     res.status(500).json({ error: error });
   }
 });
+
+// Search User
+route.get("/searchUser/:name", async (req, res) => {
+  const name = req.params.name;
+  try {
+    let data = await User.find({
+      $or: [
+        {
+          user_name: { $regex: name },
+        },
+      ],
+    });
+    res.status(200).json({ success: "User found", data: data });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
+// route.get("/viewOrders", async (req, res) => {
+//   try {
+//     const orderData = Order.aggregate([
+//       {
+//         $lookup: {
+//           from: "users",
+//           localField: "user_id",
+//           foreignField: "_id",
+//           as: "users",
+//         },
+//       },
+//       { $unwind: "users" },
+//     ]);
+//     res.status(200).json({ success: "Order Succesfull", data: data });
+//   } catch (error) {
+//     res.status(500).json({ error: error });
+//   }
+// });
 
 module.exports = route;

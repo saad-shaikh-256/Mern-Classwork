@@ -155,10 +155,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/axiosDemo"
                   className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                 >
-                  Cookies
+                  Show Data Using API
                 </Link>
               </li>
               <li>
